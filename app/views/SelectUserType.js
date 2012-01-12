@@ -12,6 +12,7 @@ UPSApp.views.SelectUserType = Ext.extend(Ext.Panel, {
 	       },
 	       {
 	    	   xtype:'button',
+	    	   cls:'btn_imastudent',
 	    	   text:"I'm a Student"
 	       },
 	       {
