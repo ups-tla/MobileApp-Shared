@@ -1,0 +1,67 @@
+$base-color: #800000;
+$active-color: #F00;
+$page-bg-color: #FFF;
+$base-gradient: 'matte';
+$button-gradient: 'bevel';
+$include_default_icons: false;
+
+@import 'sencha-touch/default/all';
+
+@include sencha-panel;
+@include sencha-buttons;
+@include sencha-sheet;
+@include sencha-picker;
+@include sencha-tabs;
+@include sencha-toolbar;
+@include sencha-toolbar-forms;
+@include sencha-indexbar;
+@include sencha-list;
+@include sencha-list-paging;
+@include sencha-list-pullrefresh;
+@include sencha-layout;
+@include sencha-carousel;
+@include sencha-form;
+@include sencha-msgbox;
+@include sencha-loading-spinner;
+
+@include sencha-toolbar-ui('maroon', #800000);
+@include sencha-toolbar-ui('white', #dddddd);
+@include sencha-button-ui('maroon', #800000, 'bevel');
+@include sencha-button-ui('white', #dddddd, 'glossy');
+
+@mixin custom-iconmask($name) {
+  .x-tab img.#{$name}, .x-button img.x-icon-mask.#{$name} {
+    position:absolute;
+    width:100%;
+    height:100%;
+    -webkit-mask-image: inline-image('icons/' + $name + '.png');
+    -webkit-mask-size: auto 50% !important;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-origin: content;
+    -webkit-mask-position: 5% 50%;
+    
+  }
+}
+
+@include custom-iconmask('gradcap');
+
+.imageButton {
+  font-weight:bold;
+}
+.imageButton > div {
+  float: left;
+  position: relative;
+  left: 50% !important;
+}
+.imageButton > div > * {
+  float:left;
+  position:relative;
+  left:-50%;
+}
+.imageButton > div > img {
+  width:auto;
+  height:1.5em;
+  margin:0 0.7em;
+}
+
+

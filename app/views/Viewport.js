@@ -4,8 +4,11 @@ UPSApp.views.Viewport = Ext.extend(Ext.Panel, {
 	fullscreen:true,
 	layout: 'card',
 	cardSwitchAnimation:'pop',
+	align:'stretch',
+	scroll:false,
 	dockedItems:[
 		new Ext.Toolbar({
+			ui: 'maroon',
 			dock:'bottom',
 			title:"Debug",
 			items:[
@@ -40,9 +43,7 @@ UPSApp.views.Viewport = Ext.extend(Ext.Panel, {
 				activeItem:0
 			})
 		else if(User.GetUserType() == "parent")
-			Ext.apply(this, {
-				activeItem:1
-			})
+			User.SetUserType("none");
 		
 		UPSApp.views.Viewport.superclass.initComponent.apply(this, arguments);
 	}
