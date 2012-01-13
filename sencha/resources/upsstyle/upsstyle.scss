@@ -1,11 +1,14 @@
 $base-color: #800000;
 $active-color: #F00;
-$page-bg-color: #FFF;
+$page-bg-color: #800000;
 $base-gradient: 'matte';
-$button-gradient: 'bevel';
+$button-gradient: 'matte';
 $include_default_icons: false;
+$toolbar-gradient:'none';
+$text-color:#FFF;
 
 @import 'sencha-touch/default/all';
+@import 'upsstyle/studentinfo';
 
 @include sencha-panel;
 @include sencha-buttons;
@@ -26,8 +29,8 @@ $include_default_icons: false;
 
 @include sencha-toolbar-ui('maroon', #800000);
 @include sencha-toolbar-ui('white', #dddddd);
-@include sencha-button-ui('maroon', #800000, 'bevel');
-@include sencha-button-ui('white', #dddddd, 'glossy');
+@include sencha-button-ui('maroon', #800000, 'matte');
+@include sencha-button-ui('white', #dddddd, 'matte');
 
 @mixin custom-iconmask($name) {
   .x-tab img.#{$name}, .x-button img.x-icon-mask.#{$name} {
@@ -43,25 +46,33 @@ $include_default_icons: false;
   }
 }
 
-@include custom-iconmask('gradcap');
+.readonlyform .x-input-text{
+  color:#000;
+  
+}
+
+.x-form-field-container {
+  background-color:#FFF;
+}
 
 .imageButton {
   font-weight:bold;
+  text-align:center;
+  
 }
 .imageButton > div {
-  float: left;
+  font-size:200%;
   position: relative;
-  left: 50% !important;
+  left: 50% !important;  
 }
 .imageButton > div > * {
-  float:left;
   position:relative;
   left:-50%;
 }
 .imageButton > div > img {
   width:auto;
   height:1.5em;
-  margin:0 0.7em;
+  margin:auto;
 }
 
 

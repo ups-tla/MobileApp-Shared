@@ -1,4 +1,5 @@
 UPSApp.views.SelectUserType = Ext.extend(Ext.Panel, {
+	id:'selectusertype',
 	layout:'card',
 	items:[
 	       {
@@ -10,16 +11,18 @@ UPSApp.views.SelectUserType = Ext.extend(Ext.Panel, {
 	           defaults: {
 	               xtype: 'button',
 	               ui: 'maroon',
+	               style: { marginBottom:'1%'}
 	           },
 	    	   items:[  
 	    		   {
 	    			   xtype:'panel',
 	    			   height:32,
 	    			   align:'center',
-	    			   html:"How are you affiliated with UPS?"
+	    			   html:"How are you affiliated with UPS?",
 	    		   },
 			       {
-			    	   text:"I'm a Parent",
+	    			   html:'<div><img src="sencha/resources/upsstyle/images/icons/studentparent.png"/><div>Parent</div></div>',
+	    			   cls:'imageButton',
 			    	   flex: 1,
 			    	   width:"96%",
 			    	   handler:function() {
@@ -28,20 +31,25 @@ UPSApp.views.SelectUserType = Ext.extend(Ext.Panel, {
 			    	   }
 			       }, {
 			    	   cls:'imageButton',
-			    	   html:'<div><div>Student</div><img src="gradcap.png"/></div>',
-			    	   flex: 1,
-			    	   width:"96%"
-			       }, {
-			    	   cls:'btn-imastudent',
+			    	   html:'<div><img src="sencha/resources/upsstyle/images/icons/gradcap.png"/><div>Student</div></div>',
 			    	   flex: 1,
 			    	   width:"96%",
-			    	   text:"I'm an Alumnus"
+			    	   handler:function() {
+			    		   User.SetUserType('student');
+			    		   UPSApp.views.viewport.setActiveItem('studentlogin');
+			    	   }
+			    	   
+			       }, {
+			    	   cls:'imageButton',
+			    	   html:'<div><img src="sencha/resources/upsstyle/images/icons/scroll.png"/><div>Alumnus</div></div>',
+			    	   flex: 1,
+			    	   width:"96%"
 			       }]
 	       }
 	],
 	initComponent: function() {
 		
 		
-		UPSApp.views.Viewport.superclass.initComponent.apply(this, arguments);
+		UPSApp.views.SelectUserType.superclass.initComponent.apply(this, arguments);
 	}
 });

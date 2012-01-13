@@ -1,0 +1,31 @@
+.student-info {
+  color:$text-color;
+  p {
+    margin:0 5px;
+    line-height:150%;
+  }
+  hr {
+    border: 2px solid darken($base-color, 10%);
+  }
+  b {
+    text-shadow: #000 4px 4px 5px;
+  }
+  b.large {
+    font-size:64px;
+    line-height:80px;
+  }
+  b.medium {
+    font-size:32px;
+    line-height:50px;
+  }
+  b.small {
+    font-size:20px;
+    line-height:30px;
+  }
+  .dinerdollars{
+    .value {
+      font-size:64px;
+    }
+
+  }
+}
