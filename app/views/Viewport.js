@@ -31,17 +31,26 @@ UPSApp.views.Viewport = Ext.extend(Ext.Panel, {
 		UPSApp.views.studentLogin = new UPSApp.views.StudentLogin();
 		UPSApp.views.studentInfo = new UPSApp.views.StudentInfo();
 		UPSApp.views.studentHome = new UPSApp.views.StudentHome();
+		UPSApp.views.studentNews = new UPSApp.views.StudentNews();
+		UPSApp.views.newsDetail = new UPSApp.views.NewsDetail();
+		UPSApp.views.ticketToTacoma = new UPSApp.views.TicketToTacoma();
+		UPSApp.views.heyYouSubmission = new UPSApp.views.HeyYouSubmission();
 
 		this.add(UPSApp.views.selectUserType);
 		this.add(UPSApp.views.parentHome);
 		this.add(UPSApp.views.studentLogin);
 		this.add(UPSApp.views.studentInfo);
-		this.add(UPSApp.views.studentHome);	
+		this.add(UPSApp.views.studentHome);
+		this.add(UPSApp.views.studentNews);
+		this.add(UPSApp.views.newsDetail);
+		this.add(UPSApp.views.ticketToTacoma);
+		this.add(UPSApp.views.heyYouSubmission);
 		
 		if(User.GetUserType() == "none")			// Go to the select user type panel
 			this.setActiveItem('selectusertype');
 		else if(User.GetUserType() == "parent") 	// DEBUG: just reset to none, otherwise we will probably go to school website
 		{
+		    // TEMP
 			User.SetUserType("none");
 			this.setActiveItem('selectusertype');
 		}

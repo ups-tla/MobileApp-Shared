@@ -11,10 +11,16 @@ UPSApp.views.StudentHome = Ext.extend(Ext.Panel, {
 		
 		var elements = [
 		               {xtype:'button',text:'Student Info',handler:function(){Ext.dispatch({controller: 'Student',action:'info'});}},
-		               {xtype:'button',text:'News'},
+		               {xtype:'button',text:'News', handler:function(){
+		                       Ext.dispatch({controller:'Student', action:'news'});
+		               }},
 		               {xtype:'button',text:'Events'},
-		               {xtype:'button',text:'Finances'},
-		               {xtype:'button',text:'Fifth element'}
+		               {xtype:'button',text:'Hey You!', handler:function(){
+                               Ext.dispatch({controller:'Student', action:'heyyousubmission'});
+                       }},
+		               {xtype:'button',text:'Ticket To Tacoma', handler:function(){
+                               Ext.dispatch({controller:'Student', action:'tickettotacoma'});
+                       }}
 		];
 			
 		var idx = 0; var hboxes = [header];
